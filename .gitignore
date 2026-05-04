@@ -1,9 +1,3 @@
-
----
-
-Here is your correct **`.gitignore`**:
-
-```text
 # Node.js
 node_modules/
 npm-debug.log

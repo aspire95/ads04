@@ -21,11 +21,11 @@ cd backend/
 npm install
 npm run setup   # Initializes the admin (Username: admin, Password: admin123)
 npm start       # Starts server at http://localhost:3000
-
+```
 
 ### 3️⃣ Frontend Setup
 ```bash
 cd frontend/
 npm install
-npm start       # Launches the application at http://localhost:4200
+npm start       # Starts app at http://localhost:4200
 ```
