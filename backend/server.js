@@ -10,7 +10,7 @@ const userRoutes = require('./routes/users');
 const assignmentRoutes = require('./routes/assignments');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -26,8 +26,8 @@ pool.connect(async (err, client, release) => {
         await client.query(`
             CREATE TABLE IF NOT EXISTS exam_assignments04 (
                 id SERIAL PRIMARY KEY,
-                exam_id INTEGER NOT NULL,
-                student_id INTEGER NOT NULL,
+                exam_id INTEGER REFERENCES exams04(id) ON DELETE CASCADE,
+                student_id INTEGER REFERENCES users04(id) ON DELETE CASCADE,
                 assigned_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 UNIQUE(exam_id, student_id)
             )
